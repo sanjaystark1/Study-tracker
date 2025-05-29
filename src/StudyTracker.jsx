@@ -90,11 +90,5 @@ const StudyTracker = () => {
   );
 };
 
-function App() {
-  return (
-    <div className="App">
-      <StudyTracker />
-    </div>
-  );
-}
+
 export default StudyTracker;

@@ -2,6 +2,13 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import React from "react";
 import StudyTracker from "./components/StudyTracker";
+function App() {
+  return (
+    <div className="App">
+      <StudyTracker />
+    </div>
+  );
+}
 const subjects = [
   {
     title: "📘 Basic Electrical Engineering",
