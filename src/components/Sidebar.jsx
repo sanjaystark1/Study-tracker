@@ -1,30 +1,18 @@
-import { FaBook, FaCalendarAlt, FaCog, FaTachometerAlt } from "react-icons/fa";
+import React from "react";
+import { Link } from "react-router-dom";
 
-export default function Sidebar() {
-  return (
-    <div className="w-64 bg-white p-6 shadow-md h-full">
-      <div className="mb-8 flex items-center gap-2">
-        <img src="https://i.pravatar.cc/40" alt="User" className="rounded-full" />
-        <div>
-          <p className="font-bold">Sarah Johnson</p>
-          <p className="text-sm text-gray-500">Student</p>
-        </div>
-      </div>
-      <nav className="space-y-4">
-        <NavItem icon={<FaTachometerAlt />} label="Dashboard" />
-        <NavItem icon={<FaCalendarAlt />} label="Calendar" />
-        <NavItem icon={<FaBook />} label="Courses" />
-        <NavItem icon={<FaCog />} label="Settings" />
-      </nav>
+const Sidebar = () => (
+  <div className="w-60 h-screen bg-gray-800 text-white flex flex-col p-4">
+    <div className="mb-8">
+      <img src="/avatar.png" alt="User" className="w-12 h-12 rounded-full" />
+      <p className="mt-2">Studyroom</p>
+      <p className="text-sm text-gray-400">Student</p>
     </div>
-  );
-}
+    <Link className="mb-2 hover:text-blue-300" to="/">Dashboard</Link>
+    <Link className="mb-2 hover:text-blue-300" to="/calendar">Calendar</Link>
+    <Link className="mb-2 hover:text-blue-300" to="/courses">Courses</Link>
+    <Link className="hover:text-blue-300" to="/settings">Settings</Link>
+  </div>
+);
 
-function NavItem({ icon, label }) {
-  return (
-    <div className="flex items-center gap-2 p-2 rounded hover:bg-gray-200 cursor-pointer">
-      <span>{icon}</span>
-      <span>{label}</span>
-    </div>
-  );
-}
+export default Sidebar;
